@@ -1,5 +1,12 @@
 const Car = require('../models/Car');
 const mongoose = require('mongoose');
+const {
+  uploadToCloudinary,
+  deleteFromCloudinary,
+  extractPublicId,
+  isConfigured,
+} = require('../config/cloudinary');
+const { cleanupTempFiles } = require('../middleware/upload');
 
 // Helper to format car response
 const formatCar = (car) => {
