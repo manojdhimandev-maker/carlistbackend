@@ -62,6 +62,14 @@ const carSchema = new mongoose.Schema(
         return this.image ? [this.image] : [];
       },
     },
+    image_public_id: {
+      type: String,
+      default: '',
+    },
+    images_public_ids: {
+      type: [String],
+      default: [],
+    },
     body: {
       type: String,
       enum: ['Saloon', 'Estate', 'SUV', 'Hatchback', 'Coupe', 'Convertible'],
